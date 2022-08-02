@@ -6,43 +6,37 @@ Vue.use(VueRouter);
 export default new VueRouter({
   routes: [
     {
-      path: '/home',
+      path: '/',
+      redirect: '/dashboard'
+    },
+    {
+      path: '/',
       component: () => import('../components/common/Home.vue'),
       meta: {
-        title: 'Home组件',
+        title: '自述文件',
       },
       children: [
         {
-          path: 'child',
-          component: () => import('../components/page/Children.vue'),
+          path: 'dashboard',
+          component: () => import('../components/page/Dashboard.vue'),
+          meta: {
+            title: '系统首页'
+          }
         },
         {
-          path: 'child1',
-          component: () => import('../components/page/Children1.vue'),
-        },
-        {
-          path: 'child2',
-          component: () => import('../components/page/Children2.vue'),
-        },
-        {
-          path: 'child3',
-          component: () => import('../components/page/Children3.vue'),
-        },
-        {
-          path: 'first',
-          component: () => import('../components/page/First.vue'),
-        },
-        {
-          path: 'second',
-          component: () => import('../components/page/Second.vue'),
+          path: 'tabs',
+          component: () => import('../components/page/Tabs.vue'),
+          meta: {
+            title: 'tab选项卡'
+          }
         }
       ]
     },
     {
       path: '/login',
-      component: () => import('../components/common/Login.vue'),
+      component: () => import('../components/page/Login.vue'),
       meta: {
-        title: 'Login组件'
+        title: '登录'
       }
     },
     {
