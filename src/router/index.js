@@ -29,6 +29,13 @@ export default new VueRouter({
           meta: {
             title: 'tab选项卡'
           }
+        },
+        {
+          path: 'table',
+          component: () => import('../components/page/BaseTable.vue'),
+          meta: {
+            title: '基础表格'
+          }
         }
       ]
     },
