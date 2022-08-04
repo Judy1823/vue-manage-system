@@ -36,6 +36,20 @@ export default new VueRouter({
           meta: {
             title: '基础表格'
           }
+        },
+        {
+          path: 'drag',
+          component: () => import('../components/page/DragList.vue'),
+          meta: {
+            title: '拖拽列表'
+          }
+        },
+        {
+          path: 'dialog',
+          component: () => import('../components/page/DragDialog.vue'),
+          meta: {
+            title: '拖拽弹框'
+          }
         }
       ]
     },
