@@ -50,7 +50,64 @@ export default new VueRouter({
           meta: {
             title: '拖拽弹框'
           }
-        }
+        },
+        {
+          path: 'charts',
+          component: () => import('../components/page/BaseCharts.vue'),
+          meta: {
+            title: 'schart图表'
+          }
+        },
+        {
+          path: 'upload',
+          component: () => import('../components/page/Upload.vue'),
+          meta: {
+            title: '文件上传'
+          }
+        },
+        {
+          path: 'editor',
+          component: () => import('../components/page/VueEditor.vue'),
+          meta: {
+            title: '富文本编辑器'
+          }
+        },
+        {
+          path: 'markdown',
+          component: () => import('../components/page/MarkDown.vue'),
+          meta: {
+            title: 'markdown编辑器'
+          }
+        },
+        {
+          path: 'i18n',
+          component: () => import('../components/page/I18n.vue'),
+          meta: {
+            title: '国际化'
+          }
+        },
+        {
+          path: 'permission',
+          component: () => import('../components/page/Permission.vue'),
+          meta: {
+            title: '权限测试',
+            permission: true
+          }
+        },
+        {
+          path: '403',
+          component: () => import('../components/page/403.vue'),
+          meta: {
+            title: '403'
+          }
+        },
+        {
+          path: '404',
+          component: () => import('../components/page/404.vue'),
+          meta: {
+            title: '404'
+          }
+        },
       ]
     },
     {

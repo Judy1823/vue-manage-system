@@ -3,11 +3,22 @@ import App from './App.vue'
 import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import './utils/directive';
+import './assets/css/icon.css';
+import './assets/css/Icon-css/iconfont.css';
+import './utils/directive'; // 拖拽组件
+import VueI18n from 'vue-i18n';
+import { messages } from './utils/i18n'; // 引入国际化插件设定的不同语言的文本
+import 'babel-polyfill'; // 加载语法编辑器
 
+Vue.config.productionTip = false;
+Vue.use(VueI18n);
 Vue.use(ElementUI, { size: 'small', zIndex: 3000 });
 
-Vue.config.productionTip = false
+// 实例化国际化插件
+const i18n = new VueI18n({
+  locale: 'zh',
+  messages,
+});
 
 // 设置全局前置守卫
 /**
@@ -36,5 +47,6 @@ router.beforeEach((to, from, next) => {
 
 new Vue({
   router,
+  i18n,
   render: h => h(App),
 }).$mount('#app')
